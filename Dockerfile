@@ -11,6 +11,10 @@ RUN rm -f /etc/service/nginx/down
 
 ADD nginx-webapp.conf /etc/nginx/sites-enabled/webapp.conf
 RUN mkdir /home/app/webapp
+RUN mkdir /home/app/projects
+
+RUN sudo apt-get install ruby-dev
+RUN gem install t
 
 ## Install SSH for a specific  user (thanks to public key)
 ADD id_rsa.pub /tmp/your_key
